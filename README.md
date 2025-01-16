@@ -53,8 +53,3 @@ This document provides an overview of common keymaps, including custom and defau
 | `:tabnext`          | Normal| Go to the next tab                 |
 
 ---
-
-### Notes
-- `<leader>` is set to your preferred key (e.g., `\` or `space`).
-- Ensure all plugins referenced by the keybindings are installed and configured properly.
-
