@@ -1,6 +1,5 @@
-# Neovim Keymaps Documentation
+# Neovim Keymapings 
 
-This document provides an overview of common keymaps, including custom and default mappings.
 
 ## General Keymaps
 | Key Combination     | Mode  | Description                         |
@@ -35,6 +34,15 @@ This document provides an overview of common keymaps, including custom and defau
 |---------------------|-------|-------------------------------------|
 | `<leader>tr`        | Normal| Compile and run Java code           |
 
+
+
+## Github Stuff 
+
+| Key Combination     | Mode  | Description                         |
+|---------------------|-------|-------------------------------------|
+| `<leader>lg`        | Normal| Opens Lazy Git                      |
+
+
 ## nvim-cmp (Auto Completion)
 | Key Combination     | Mode  | Description                         |
 |---------------------|-------|-------------------------------------|
@@ -54,8 +62,4 @@ This document provides an overview of common keymaps, including custom and defau
 | `:tabnext`          | Normal| Go to the next tab                 |
 
 ---
-
-### Notes
-- `<leader>` is set to your preferred key (e.g., `\` or `space`).
-- Ensure all plugins referenced by the keybindings are installed and configured properly.
 

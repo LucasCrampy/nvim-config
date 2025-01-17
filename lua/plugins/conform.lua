@@ -22,7 +22,8 @@ return {
 			lua = { "stylua" },
 			python = { "isort", "black" },
 			java = { "google-java-format" },
-			javascript = { "prettierd", "prettier", stop_after_first = true },
+			javascript = { "prettierd" },
+			markdown = { "prettier" },
 		},
 		-- Set default options
 		default_format_opts = {

@@ -26,7 +26,8 @@ map("n", "<leader>t", ":ToggleTerm<CR>", opts) -- Open/close terminal
 -- Java Compilation and Execution
 map("n", "<leader>tr", ":CompileAndRunJava<CR>", opts) -- Compile and run Java code
 
-map("n", "<leader>lg", ":LazyGit<CR>", opts) -- Compile and run Java code
+-- run LazyGit
+map("n", "<leader>lg", ":LazyGit<CR>", opts)
 
 -- nvim-cmp (Auto Completion)
 map("i", "<C-b>", "v:lua.cmp.mapping.scroll_docs(-4)", { noremap = true, silent = true, expr = true }) -- Scroll documentation up
