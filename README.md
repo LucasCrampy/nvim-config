@@ -27,7 +27,8 @@ This document provides an overview of common keymaps, including custom and defau
 ## Terminal Management
 | Key Combination     | Mode  | Description                         |
 |---------------------|-------|-------------------------------------|
-| `<leader>t`         | Normal| Open/close the terminal (`ToggleTerm`) |
+| `<leader>t`         | Normal| Open the terminal (`ToggleTerm`) |
+| `<C-\>`         | Terminal| Close the terminal (`ToggleTerm`) |
 
 ## Java Compilation
 | Key Combination     | Mode  | Description                         |
