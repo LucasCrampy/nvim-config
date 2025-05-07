@@ -1,40 +1,67 @@
 return {
-  "neovim/nvim-lspconfig",
+	"neovim/nvim-lspconfig",
+	dependencies = {
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+	},
+	config = function()
+		-- Require the necessary modules
+		local lspconfig = require("lspconfig")
+		local mason = require("mason")
+		local mason_lspconfig = require("mason-lspconfig")
 
-  dependencies = {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-  },
+		-- Setup Mason
+		mason.setup()
 
-  config = function()
-    -- Require the necessary modules
-    local lspc = require("lspconfig")
-    local mason = require("mason")
-    local mason_lspconfig = require("mason-lspconfig")
+		-- Setup Mason-LSPConfig with ensure_installed
+		mason_lspconfig.setup({
+			ensure_installed = {
+				"rust_analyzer",
+				"jsonls",
+				"ast_grep",
+				"grammarly",
+				"jdtls",
+				"jedi_language_server",
+				"lua_ls"
+			}
+		})
 
-    -- Setup Mason
-    mason.setup()
+		-- Define a function to attach the LSP to the buffer
+		local on_attach = function(client, bufnr)
+			local opts = { noremap = true, silent = true }
+			local buf_set_keymap = vim.api.nvim_buf_set_keymap
+			buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+			buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+		end
 
-    -- Setup Mason-LSPConfig
-    mason_lspconfig.setup()
+		-- Explicitly setup each server
+		lspconfig.rust_analyzer.setup({
+			on_attach = on_attach,
+		})
 
-    -- Define a function to attach the LSP to the buffer
-    local on_attach = function(client, bufnr)
-      -- Set up buffer-local keybindings, etc.
-      local opts = { noremap = true, silent = true }
-      local buf_set_keymap = vim.api.nvim_buf_set_keymap
-      buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-      buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-      -- Add other keymaps as needed
-    end
+		lspconfig.jsonls.setup({
+			on_attach = on_attach,
+		})
 
-    -- Setup handlers for each LSP server
-    mason_lspconfig.setup_handlers {
-      function(server_name)
-        lspc[server_name].setup {
-          on_attach = on_attach, -- Ensure the LSP is attached to the buffer
-        }
-      end,
-    }
-  end,
+		lspconfig.ast_grep.setup({
+			on_attach = on_attach,
+		})
+
+		lspconfig.grammarly.setup({
+			on_attach = on_attach,
+		})
+
+		lspconfig.jdtls.setup({
+			on_attach = on_attach,
+		})
+
+		lspconfig.jedi_language_server.setup({
+			on_attach = on_attach,
+		})
+
+		lspconfig.lua_ls.setup({
+			on_attach = on_attach,
+		})
+	end,
 }
+

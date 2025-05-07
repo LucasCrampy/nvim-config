@@ -1,7 +1,4 @@
--- ~/.config/nvim/lua/plugins/nvim-cmp.lua
-
 return {
-	-- Set up nvim-cmp
 	{
 		"hrsh7th/nvim-cmp",
 		dependencies = {
@@ -15,10 +12,10 @@ return {
 		},
 		config = function()
 			local cmp = require("cmp")
+			local lspconfig = require("lspconfig")
 
 			cmp.setup({
 				snippet = {
-					-- REQUIRED - you must specify a snippet engine
 					expand = function(args)
 						vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
 					end,
@@ -32,11 +29,11 @@ return {
 					["<C-f>"] = cmp.mapping.scroll_docs(4),
 					["<C-Space>"] = cmp.mapping.complete(),
 					["<C-e>"] = cmp.mapping.abort(),
-					["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+					["<CR>"] = cmp.mapping.confirm({ select = true }),
 				}),
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
-					{ name = "vsnip" }, -- For vsnip users.
+					{ name = "vsnip" },
 				}, {
 					{ name = "buffer" },
 				}),
@@ -60,12 +57,26 @@ return {
 				matching = { disallow_symbol_nonprefix_matching = false },
 			})
 
-			-- Set up lspconfig
+			-- Set up LSP capabilities for all your installed servers
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-			require("lspconfig")["<YOUR_LSP_SERVER>"].setup({
-				capabilities = capabilities,
-			})
+			-- Setup capabilities for each of your installed servers
+			local servers = {
+				"rust_analyzer",
+				"jsonls",
+				"ast_grep",
+				"grammarly",
+				"jdtls",
+				"jedi_language_server",
+				"lua_ls"
+			}
+
+			for _, server in ipairs(servers) do
+				lspconfig[server].setup({
+					capabilities = capabilities,
+				})
+			end
 		end,
 	},
 }
+
