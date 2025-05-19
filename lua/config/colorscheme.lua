@@ -1,3 +1,5 @@
 --vim.cmd.colorscheme("catppuccin-mocha")
 -- vim.cmd.colorscheme("rose-pine-moon")
-vim.cmd.colorscheme("everforest")
+-- vim.cmd.colorscheme("everforest")
+--vim.cmd.colorscheme("gruvbox-material")
+vim.cmd.colorscheme("gruvbox")
