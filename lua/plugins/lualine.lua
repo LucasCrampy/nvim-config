@@ -23,7 +23,22 @@ return {
 		sections = {
 			lualine_a = {'mode'},
 			lualine_b = { 'diff', 'diagnostics'},
-			lualine_c = {'filename'},
+			lualine_c = {
+				'filename',
+				{
+					function()
+						local profile = vim.g.current_profile or "Code"
+						local icon = ""
+						if profile == "Mathematics" then
+							icon = ""
+						elseif profile == "Writing" then
+							icon = "󰏫"
+						end
+						return icon .. " " .. profile
+					end,
+					color = { gui = "bold" }
+				}
+			},
 			lualine_x = {'filetype'},
 			lualine_y = {'progress'},
 			lualine_z = {'location'}
