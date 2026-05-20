@@ -2902,4 +2902,164 @@ s({trig = "itms", name = "Multiple integral subscript", snippetType = "autosnipp
     {condition = in_mathzone}
 ),
 
+
+-- Multivariable Calculus & Linear Algebra
+s({trig = "jac", name = "Jacobian Determinant", snippetType = "autosnippet"},
+    {
+        t("\\det \\mathbf{J} = \\frac{\\partial("), i(1, "x, y, z"), t(")}{\\partial("), i(2, "u, v, w"), t(")}")
+    }, {condition = in_mathzone}
+),
+
+s({trig = "divth", name = "Divergence Theorem", snippetType = "autosnippet"},
+    {
+        t("\\iiint_{V} (\\nabla \\cdot \\mathbf{F}) \\, dV = \\iint_{\\partial V} \\mathbf{F} \\cdot d\\mathbf{S}")
+    }, {condition = in_mathzone}
+),
+
+s({trig = "stokes", name = "Stokes' Theorem", snippetType = "autosnippet"},
+    {
+        t("\\iint_{\\Sigma} (\\nabla \\times \\mathbf{F}) \\cdot d\\mathbf{S} = \\oint_{\\partial \\Sigma} \\mathbf{F} \\cdot d\\mathbf{r}")
+    }, {condition = in_mathzone}
+),
+
+-- Engineering Physics & Quantum Phenomena
+s({trig = "schro", name = "Schrodinger Equation", snippetType = "autosnippet"},
+    {
+        t("i\\hbar\\frac{\\partial}{\\partial t}\\ket{\\Psi} = \\hat{H}\\ket{\\Psi}")
+    }, {condition = in_mathzone}
+),
+
+s({trig = "comm", name = "Commutator", snippetType = "autosnippet"},
+    {
+        t("[\\hat{"), i(1, "A"), t("}, \\hat{"), i(2, "B"), t("}] = "), i(3, "i\\hbar")
+    }, {condition = in_mathzone}
+),
+
+-- Differential Equations
+s({trig = "laplace", name = "Laplace Transform", snippetType = "autosnippet"},
+    {
+        t("\\mathcal{L}\\{"), i(1, "f(t)"), t("\\} = \\int_{0}^{\\infty} "), rep(1), t(" e^{-st} \\, dt")
+    }, {condition = in_mathzone}
+),
+
+
+-- Multivariable Calculus & Linear Algebra
+s({trig = "jac", name = "Jacobian Determinant", snippetType = "autosnippet"},
+    {
+        t("\\det \\mathbf{J} = \\frac{\\partial("), i(1, "x, y, z"), t(")}{\\partial("), i(2, "u, v, w"), t(")}")
+    }, {condition = in_mathzone}
+),
+
+s({trig = "divth", name = "Divergence Theorem", snippetType = "autosnippet"},
+    {
+        t("\\iiint_{V} (\\nabla \\cdot \\mathbf{F}) \\, dV = \\iint_{\\partial V} \\mathbf{F} \\cdot d\\mathbf{S}")
+    }, {condition = in_mathzone}
+),
+
+s({trig = "stokes", name = "Stokes' Theorem", snippetType = "autosnippet"},
+    {
+        t("\\iint_{\\Sigma} (\\nabla \\times \\mathbf{F}) \\cdot d\\mathbf{S} = \\oint_{\\partial \\Sigma} \\mathbf{F} \\cdot d\\mathbf{r}")
+    }, {condition = in_mathzone}
+),
+
+-- Engineering Physics & Quantum Phenomena
+s({trig = "schro", name = "Schrodinger Equation", snippetType = "autosnippet"},
+    {
+        t("i\\hbar\\frac{\\partial}{\\partial t}\\ket{\\Psi} = \\hat{H}\\ket{\\Psi}")
+    }, {condition = in_mathzone}
+),
+
+s({trig = "comm", name = "Commutator", snippetType = "autosnippet"},
+    {
+        t("[\\hat{"), i(1, "A"), t("}, \\hat{"), i(2, "B"), t("}] = "), i(3, "i\\hbar")
+    }, {condition = in_mathzone}
+),
+
+-- Differential Equations
+s({trig = "laplace", name = "Laplace Transform", snippetType = "autosnippet"},
+    {
+        t("\\mathcal{L}\\{"), i(1, "f(t)"), t("\\} = \\int_{0}^{\\infty} "), rep(1), t(" e^{-st} \\, dt")
+    }, {condition = in_mathzone}
+),
+
+
+-- Multivariable Calculus & Linear Algebra
+s({trig = "jac", name = "Jacobian Determinant", snippetType = "autosnippet"},
+    {
+        t("\\det \\mathbf{J} = \\frac{\\partial("), i(1, "x, y, z"), t(")}{\\partial("), i(2, "u, v, w"), t(")}")
+    }, {condition = in_mathzone}
+),
+
+s({trig = "divth", name = "Divergence Theorem", snippetType = "autosnippet"},
+    {
+        t("\\iiint_{V} (\\nabla \\cdot \\mathbf{F}) \\, dV = \\iint_{\\partial V} \\mathbf{F} \\cdot d\\mathbf{S}")
+    }, {condition = in_mathzone}
+),
+
+s({trig = "stokes", name = "Stokes' Theorem", snippetType = "autosnippet"},
+    {
+        t("\\iint_{\\Sigma} (\\nabla \\times \\mathbf{F}) \\cdot d\\mathbf{S} = \\oint_{\\partial \\Sigma} \\mathbf{F} \\cdot d\\mathbf{r}")
+    }, {condition = in_mathzone}
+),
+
+-- Engineering Physics & Quantum Phenomena
+s({trig = "schro", name = "Schrodinger Equation", snippetType = "autosnippet"},
+    {
+        t("i\\hbar\\frac{\\partial}{\\partial t}\\ket{\\Psi} = \\hat{H}\\ket{\\Psi}")
+    }, {condition = in_mathzone}
+),
+
+s({trig = "comm", name = "Commutator", snippetType = "autosnippet"},
+    {
+        t("[\\hat{"), i(1, "A"), t("}, \\hat{"), i(2, "B"), t("}] = "), i(3, "i\\hbar")
+    }, {condition = in_mathzone}
+),
+
+-- Differential Equations
+s({trig = "laplace", name = "Laplace Transform", snippetType = "autosnippet"},
+    {
+        t("\\mathcal{L}\\{"), i(1, "f(t)"), t("\\} = \\int_{0}^{\\infty} "), rep(1), t(" e^{-st} \\, dt")
+    }, {condition = in_mathzone}
+),
+
+
+-- Multivariable Calculus & Linear Algebra
+s({trig = "jac", name = "Jacobian Determinant", snippetType = "autosnippet"},
+    {
+        t("\\det \\mathbf{J} = \\frac{\\partial("), i(1, "x, y, z"), t(")}{\\partial("), i(2, "u, v, w"), t(")}")
+    }, {condition = in_mathzone}
+),
+
+s({trig = "divth", name = "Divergence Theorem", snippetType = "autosnippet"},
+    {
+        t("\\iiint_{V} (\\nabla \\cdot \\mathbf{F}) \\, dV = \\iint_{\\partial V} \\mathbf{F} \\cdot d\\mathbf{S}")
+    }, {condition = in_mathzone}
+),
+
+s({trig = "stokes", name = "Stokes' Theorem", snippetType = "autosnippet"},
+    {
+        t("\\iint_{\\Sigma} (\\nabla \\times \\mathbf{F}) \\cdot d\\mathbf{S} = \\oint_{\\partial \\Sigma} \\mathbf{F} \\cdot d\\mathbf{r}")
+    }, {condition = in_mathzone}
+),
+
+-- Engineering Physics & Quantum Phenomena
+s({trig = "schro", name = "Schrodinger Equation", snippetType = "autosnippet"},
+    {
+        t("i\\hbar\\frac{\\partial}{\\partial t}\\ket{\\Psi} = \\hat{H}\\ket{\\Psi}")
+    }, {condition = in_mathzone}
+),
+
+s({trig = "comm", name = "Commutator", snippetType = "autosnippet"},
+    {
+        t("[\\hat{"), i(1, "A"), t("}, \\hat{"), i(2, "B"), t("}] = "), i(3, "i\\hbar")
+    }, {condition = in_mathzone}
+),
+
+-- Differential Equations
+s({trig = "laplace", name = "Laplace Transform", snippetType = "autosnippet"},
+    {
+        t("\\mathcal{L}\\{"), i(1, "f(t)"), t("\\} = \\int_{0}^{\\infty} "), rep(1), t(" e^{-st} \\, dt")
+    }, {condition = in_mathzone}
+),
+
 }

@@ -1,5 +1,5 @@
 require("config.lazy")
-require("config.colorscheme")
 require("config.settings")
 require("config.keys")
 require("config.commands")
+require("config.profiles")
