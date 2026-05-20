@@ -21,6 +21,23 @@ map("n", "<leader>tg", ":LazyGit<CR>", { noremap = true, silent = true, desc = "
 map("n", "<leader>ca", vim.lsp.buf.code_action, { noremap = true, silent = true, desc = "Code Actions" })
 map("n", "<leader>cd", vim.diagnostic.open_float, { noremap = true, silent = true, desc = "Line Diagnostics Popup" })
 map("n", "<leader>cf", function() require("conform").format({ async = true }) end, { noremap = true, silent = true, desc = "Format Buffer" })
+map("n", "<leader>cr", function()
+  if vim.bo.modified then
+    vim.cmd("write")
+  end
+  local file_path = vim.api.nvim_buf_get_name(0)
+  local file_ext = vim.fn.fnamemodify(file_path, ":e")
+  if file_ext == "py" then
+    local python_exec = "python3"
+    if vim.g.current_profile == "Mathematics" then
+      python_exec = "/opt/homebrew/Caskroom/miniconda/base/envs/MathVis/bin/python"
+    end
+    local cmd = string.format("%s %s", python_exec, vim.fn.shellescape(file_path))
+    require("toggleterm").exec(cmd)
+  else
+    vim.notify("Run command only supports Python (.py) files", vim.log.levels.WARN)
+  end
+end, { noremap = true, silent = true, desc = "Run Current Python File" })
 
 -- 5. Math & Jupyter REPL Prefix (<leader>m)
 map("n", "<leader>mi", ":MoltenInit<CR>", { noremap = true, silent = true, desc = "Initialize Molten REPL Kernel" })
