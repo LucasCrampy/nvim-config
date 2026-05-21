@@ -1,4 +1,4 @@
-# Modernized Multi-Profile Neovim Configuration
+# Neovim Configuration
 
 This repository contains a highly modular, multi-profile Neovim configuration designed for software development, advanced mathematical/physics calculations, and academic writing. It features automated macOS light/dark theme tracking, a modern floating TUI, interactive Jupyter-style data science tools, custom template-based project generators, and a dedicated mathematics reference system.
 
